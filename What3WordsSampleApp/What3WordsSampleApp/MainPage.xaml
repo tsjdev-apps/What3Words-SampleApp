@@ -4,11 +4,61 @@
              xmlns:local="clr-namespace:What3WordsSampleApp"
              x:Class="What3WordsSampleApp.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ScrollView Margin="12">
+        <StackLayout>
 
+            <Label Text="What3Words Sample"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"/>
+
+            <Label Text="Latitude/Longitude to What3Words"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,12,0,0"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Entry x:Name="LatitudeEntry"
+                   Placeholder="Latitude..."
+                   Grid.Column="0"/>
+
+                <Entry x:Name="LongitudeEntry"
+                   Placeholder="Longitude..."
+                   Grid.Column="1"/>
+            </Grid>
+
+            <Picker x:Name="LatitudeLongitudeLanguagePicker"/>
+
+            <Button x:Name="GetWhat3WordsAddressButton"
+                Text="Get What3Words Address"
+                Clicked="GetWhat3WordsAddressButtonOnClicked"/>
+
+            <Label x:Name="What3WordsAddressLabel"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"/>
+
+
+            <Label Text="What3Words to Latitude/Longitude"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,12,0,0"/>
+
+            <Entry x:Name="AddressEntry"
+                   Placeholder="What3Words Address..."/>
+
+            <Picker x:Name="What3WordsLanguagePicker"/>
+
+            <Button x:Name="GetAddressFromWhat3WordsAddressButton"
+                Text="Get Address From What3Words"
+                Clicked="GetAddressFromWhat3WordsAddressButtonOnClicked"/>
+
+            <Label x:Name="AddressLabel"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
